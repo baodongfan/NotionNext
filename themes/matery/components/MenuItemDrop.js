@@ -43,13 +43,13 @@ export const MenuItemDrop = ({ link }) => {
       {/* 子菜单 */}
       {hasSubMenu && (
         <ul
-          style={{ backdropFilter: 'blur(3px)' }}
-          className={`${show ? 'visible opacity-100 top-12 pointer-events-auto' : 'invisible opacity-0 top-20 pointer-events-none'} drop-shadow-md overflow-hidden rounded-md bg-white dark:bg-gray-900 transition-all duration-300 z-20 absolute block  `}>
+          style={{ backdropFilter: 'blur(3px)', backgroundColor: 'rgba(31, 41, 55, 0.95)' }}
+          className={`${show ? 'visible opacity-100 top-12 pointer-events-auto' : 'invisible opacity-0 top-20 pointer-events-none'} drop-shadow-md overflow-hidden rounded-md transition-all duration-300 z-20 absolute block  `}>
           {link.subMenus.map((sLink, index) => {
             return (
               <li
                 key={index}
-                className='cursor-pointer hover:bg-indigo-500 dark:hover:bg-indigo-500 text-gray-900 dark:text-white hover:text-white tracking-widest transition-all duration-200 dark:border-gray-800  py-1 pr-6 pl-3'>
+                className='cursor-pointer hover:bg-indigo-500 dark:hover:bg-indigo-500 text-white dark:text-white hover:text-white tracking-widest transition-all duration-200 dark:border-gray-800  py-1 pr-6 pl-3'>
                 <SmartLink href={sLink.href} target={link?.target}>
                   <span className='text-sm text-nowrap font-extralight'>
                     {link?.icon && <i className={sLink?.icon}> &nbsp; </i>}
